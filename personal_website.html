@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boluwatife Adewusi - cybersecurity analyst </title>
+    <style>
+        :root {
+            --primary-color: #0a66c2;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --accent-color: #00a0dc;
+            --white: #ffffff;
+            --gray: #666;
+            --light-gray: #eee;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 30px 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            margin-bottom: 20px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            color: var(--primary-color);
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .location {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .location svg {
+            margin-right: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .skill-tag {
+            background-color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .experience-item, .education-item, .certification-item {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .experience-item:hover, .education-item:hover, .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-header, .education-header, .certification-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .company-name, .institution-name, .certification-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .job-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .duration {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .project-card {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .project-tag {
+            background-color: var(--secondary-color);
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 15px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li a {
+                padding: 10px 15px;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="profile-img">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQHyCROU0BS6Nw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1719350359608?e=1752710400&v=beta&t=mt83oEuEjoO1BKtSPC6FJwtsrrGUi5lz-44kQL8VNV8" alt="Profile Image" />
+            </div>
+            <h1 class="name">Boluwatife Adewusi</h1>
+            <p class="title">Cybersecurity Analyst </p>
+            <div class="location">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="white"/>
+                </svg>
+                Alabama, United States
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Killgrams" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 5.36 20.16 9.6 21.56C10.08 21.64 10.24 21.34 10.24 21.08C10.24 20.84 10.24 20.14 10.24 19.28C7.04 19.9 6.4 17.84 6.4 17.84C5.92 16.64 5.2 16.34 5.2 16.34C4.2 15.7 5.28 15.7 5.28 15.7C6.34 15.78 6.88 16.74 6.88 16.74C7.84 18.28 9.4 17.84 10.24 17.6C10.34 16.9 10.64 16.44 10.94 16.18C8.4 15.92 5.76 15.04 5.76 11.18C5.76 10.08 6.16 9.18 6.88 8.48C6.76 8.24 6.4 7.24 7 5.94C7 5.94 7.96 5.66 10.24 7.22C11.12 6.98 12.08 6.86 13.04 6.86C14 6.86 14.96 6.98 15.84 7.22C18.12 5.66 19.08 5.94 19.08 5.94C19.68 7.24 19.32 8.24 19.2 8.48C19.92 9.18 20.32 10.08 20.32 11.18C20.32 15.04 17.68 15.92 15.14 16.18C15.54 16.52 15.84 17.2 15.84 18.22C15.84 19.68 15.84 20.74 15.84 21.08C15.84 21.34 16 21.64 16.48 21.56C20.72 20.16 24.08 16.42 24.08 12C24.08 6.48 19.6 2 14.08 2H12Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/boluwatife-adewusi-46268423a" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="mailto:Adebolu2004@gmail.com">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    I am a passionate Student with strong focus in Criminal Justice and cybersecurity, experienced in building responsive web applications and cybersecurity Detection web application. I love solving problems with clean, efficient code and have a strong foundation in Java, Html, python, and modern web development practices. Currently working at Phishing Detection project, I continuously strive to improve my skills and stay updated with the latest technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company-name">BCD Travel</div>
+                    <div class="duration">April 2023 - Present</div>
+                </div>
+                <div class="job-title"> Information Security Intern </div>
+                <p>
+                    As a  Intern Information security at BCD Travel, I collaborated with cross-functional teams to develop and implement responsive BCD Travel's web applications. I also worked on various projects that enhanced my skills in Python and PHP practices. The program provided me with valuable real-world experience and improved my ability to work in agile development environments.
+                </p>
+            </div>
+            
+        
+    
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="institution-name">Alabama State University</div>
+                    <div class="duration">August 2022 - May 2026</div>
+                </div>
+                <p>Bachelor of Science in Criminal Justice </p>
+                <p> Minor in Computer Information System </p>
+                <p>Relevant Coursework: Cybersecurity, Network Security, Digital Forensics, Information Security Management</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">PHP</div>
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">Bootstrap</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Cybersecutity</div>
+                <div class="skill-tag">SQL</div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project-container">
+                <div class="project-card">
+                    <div class="project-img">Phishing Detection</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Phishing Detection</h3>
+                        <p>A web application that helps users track and manage Phishing emails. Features include URL and Domain Analysis, Email Header and Content Scanning, Attachment and Link Analysis.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">python</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">Project Image</div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Website</h3>
+                        <p>A responsive e-commerce platform with product listing, cart functionality, and checkout process. Implemented using React and integrated with RESTful APIs.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">html</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+    
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="certification-item">
+                <div class="certification-header">
+                    <div class="certification-name">CompTIA Security+ (Inprogress)</div>
+                    <div class="duration"></div>
+                </div>
+                <p>Comprehensive Cybersecurity course covering Security components, Network management and advanced patterns.</p>
+            </div>
+            
+            <div class="certification-item">
+                <div class="certification-header">
+                    <div class="certification-name">Microsoft Office Specialist (Excel, Powerpoint and Word)</div>
+                    <div class="duration"></div>
+                </div>
+                <p>In-depth Microsoft Office Specialist course covering advanced concepts in Excel, Powerpoint and Word .</p>
+            </div>
+            
+            <div class="certification-item">
+                <div class="certification-header">
+                    <div class="certification-name">Certified Hacking Essentials (EHE)</div>
+                    <div class="duration"></div>
+                </div>
+                <p>Certification in Ethical Hacking, covering key topics such as network security, penetration testing, vulnerability assessment, and defensive strategies to protect systems from cyber threats.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2025 Boluwatife Adewusi. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
